@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92D56DCC219DAE8D007D2E2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D56DCB219DAE8D007D2E2C /* LoginViewController.swift */; };
 		B77CF5F2219C8B6C003FB827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CF5F1219C8B6C003FB827 /* AppDelegate.swift */; };
-		B77CF5F4219C8B6C003FB827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CF5F3219C8B6C003FB827 /* ViewController.swift */; };
 		B77CF5F7219C8B6C003FB827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77CF5F5219C8B6C003FB827 /* Main.storyboard */; };
 		B77CF5F9219C8B6E003FB827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77CF5F8219C8B6E003FB827 /* Assets.xcassets */; };
 		B77CF5FC219C8B6E003FB827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77CF5FA219C8B6E003FB827 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92D56DCB219DAE8D007D2E2C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B77CF5EE219C8B6C003FB827 /* ELMA notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELMA notification.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77CF5F1219C8B6C003FB827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B77CF5F3219C8B6C003FB827 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B77CF5F6219C8B6C003FB827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B77CF5F8219C8B6E003FB827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B77CF5FB219C8B6E003FB827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				B77CF5F1219C8B6C003FB827 /* AppDelegate.swift */,
-				B77CF5F3219C8B6C003FB827 /* ViewController.swift */,
 				B77CF5F5219C8B6C003FB827 /* Main.storyboard */,
 				B77CF5F8219C8B6E003FB827 /* Assets.xcassets */,
 				B77CF5FA219C8B6E003FB827 /* LaunchScreen.storyboard */,
 				B77CF5FD219C8B6E003FB827 /* Info.plist */,
+				92D56DCB219DAE8D007D2E2C /* LoginViewController.swift */,
 			);
 			path = "FMG ELMA notification";
 			sourceTree = "<group>";
@@ -135,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B77CF5F4219C8B6C003FB827 /* ViewController.swift in Sources */,
+				92D56DCC219DAE8D007D2E2C /* LoginViewController.swift in Sources */,
 				B77CF5F2219C8B6C003FB827 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +285,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JB6463FDRF;
 				INFOPLIST_FILE = "FMG ELMA notification/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +293,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fmg.FMG-ELMA-notifications";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,6 +304,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JB6463FDRF;
 				INFOPLIST_FILE = "FMG ELMA notification/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fmg.FMG-ELMA-notifications";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
