@@ -133,6 +133,10 @@
                                     <constraint firstAttribute="height" constant="60" id="t5R-g4-05R"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="IJO-1g-fwC">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.52156862745098043" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -155,11 +159,13 @@
                             <constraint firstItem="IOH-TU-Bdn" firstAttribute="top" secondItem="irl-Wh-SBY" secondAttribute="bottom" constant="25" id="Muk-pb-7Bm"/>
                             <constraint firstItem="9eb-iH-1sP" firstAttribute="leading" secondItem="iOo-Y4-LKk" secondAttribute="leading" id="PUt-MA-2A3"/>
                             <constraint firstItem="IOH-TU-Bdn" firstAttribute="leading" secondItem="3fW-9J-hvJ" secondAttribute="trailing" constant="45" id="QRx-V5-rQQ"/>
+                            <constraint firstItem="IJO-1g-fwC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UW0-ik-AXY"/>
                             <constraint firstItem="13W-Oo-zcL" firstAttribute="centerY" secondItem="4Hl-Il-iNA" secondAttribute="centerY" id="Wux-fk-bOx"/>
                             <constraint firstItem="CM7-PR-y9t" firstAttribute="trailing" secondItem="iOo-Y4-LKk" secondAttribute="trailing" constant="-20" id="YvL-Pv-tBJ"/>
                             <constraint firstItem="irl-Wh-SBY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="c5e-FG-CXU"/>
                             <constraint firstItem="irl-Wh-SBY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d9F-cY-MMR"/>
                             <constraint firstItem="vvW-mj-i8o" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dkg-oc-HzO"/>
+                            <constraint firstItem="IJO-1g-fwC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="drJ-3P-vKI"/>
                             <constraint firstItem="R9n-bS-7Ep" firstAttribute="top" secondItem="hbj-b2-5rN" secondAttribute="bottom" constant="10" id="hoc-mn-Q9n"/>
                             <constraint firstItem="vvW-mj-i8o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="me1-pU-aQ7"/>
                             <constraint firstItem="4Hl-Il-iNA" firstAttribute="top" secondItem="iOo-Y4-LKk" secondAttribute="bottom" constant="30" id="nCt-CR-dyx"/>
@@ -180,10 +186,12 @@
                     <navigationItem key="navigationItem" id="Wae-2g-4EK"/>
                     <connections>
                         <outlet property="authBtn" destination="9eb-iH-1sP" id="RgJ-qb-VS2"/>
+                        <outlet property="loader" destination="IJO-1g-fwC" id="Ev6-pV-HpW"/>
                         <outlet property="loginBtnTopConstraint" destination="1P2-Gl-tiO" id="vTM-fk-gk4"/>
                         <outlet property="passwordStroke" destination="iOo-Y4-LKk" id="35l-t6-dKE"/>
                         <outlet property="passwordTopConstraint" destination="2cT-Js-63N" id="a90-Od-mV9"/>
                         <outlet property="passwordTxtField" destination="CM7-PR-y9t" id="2De-3g-PNy"/>
+                        <outlet property="saveSwitcher" destination="13W-Oo-zcL" id="V5s-zv-zqf"/>
                         <outlet property="saveTopConstrant" destination="nCt-CR-dyx" id="16R-7A-hHf"/>
                         <outlet property="topConstraint" destination="p6u-YT-JGS" id="tEQ-vr-g40"/>
                         <outlet property="topConstraintLogo" destination="Muk-pb-7Bm" id="aAy-1H-4sL"/>
@@ -385,8 +393,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2z5-dF-wM8">
                                 <rect key="frame" x="0.0" y="20" width="375" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tornike DaviTashvili" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76d-qd-hlV">
-                                        <rect key="frame" x="76" y="21" width="153.5" height="18.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76d-qd-hlV">
+                                        <rect key="frame" x="76" y="30" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>

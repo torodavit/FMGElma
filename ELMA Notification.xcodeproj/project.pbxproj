@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EA2E26DCAD65E13634E632D /* Pods_ELMA_notification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89A1AB97CD2A691ACCFBF1D /* Pods_ELMA_notification.framework */; };
 		92400BF0219EEA9D00CFED6A /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92400BEF219EEA9D00CFED6A /* ListViewCell.swift */; };
 		92433639219E8BC800EFDA8A /* UsersDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92433638219E8BC800EFDA8A /* UsersDefaultsManager.swift */; };
 		9243363B219E8F1100EFDA8A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9243363A219E8F1100EFDA8A /* ListViewController.swift */; };
+		92A2A23E219EED4F002704DA /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2A23D219EED4F002704DA /* ServiceManager.swift */; };
 		92D56DCC219DAE8D007D2E2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D56DCB219DAE8D007D2E2C /* LoginViewController.swift */; };
+		92F93460219F0C2000E3694D /* TODOModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F9345F219F0C2000E3694D /* TODOModel.swift */; };
 		B77CF5F2219C8B6C003FB827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CF5F1219C8B6C003FB827 /* AppDelegate.swift */; };
 		B77CF5F7219C8B6C003FB827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77CF5F5219C8B6C003FB827 /* Main.storyboard */; };
 		B77CF5F9219C8B6E003FB827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77CF5F8219C8B6E003FB827 /* Assets.xcassets */; };
@@ -19,10 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17A07ED9C63BDA6D3FE468B8 /* Pods-ELMA notification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELMA notification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELMA notification/Pods-ELMA notification.debug.xcconfig"; sourceTree = "<group>"; };
+		44B3DDC4058A64FA79705DD0 /* Pods-ELMA notification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELMA notification.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELMA notification/Pods-ELMA notification.release.xcconfig"; sourceTree = "<group>"; };
 		92400BEF219EEA9D00CFED6A /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
 		92433638219E8BC800EFDA8A /* UsersDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDefaultsManager.swift; sourceTree = "<group>"; };
 		9243363A219E8F1100EFDA8A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		92A2A23D219EED4F002704DA /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		92D56DCB219DAE8D007D2E2C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		92F9345F219F0C2000E3694D /* TODOModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOModel.swift; sourceTree = "<group>"; };
 		B77CF5EE219C8B6C003FB827 /* ELMA notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELMA notification.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77CF5F1219C8B6C003FB827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B77CF5F6219C8B6C003FB827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +37,7 @@
 		B77CF5FB219C8B6E003FB827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B77CF5FD219C8B6E003FB827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7FBDA43219DEB5A007D8861 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		C89A1AB97CD2A691ACCFBF1D /* Pods_ELMA_notification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELMA_notification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,16 +45,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA2E26DCAD65E13634E632D /* Pods_ELMA_notification.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09D3E74C3AA43CB95DA0DAB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C89A1AB97CD2A691ACCFBF1D /* Pods_ELMA_notification.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0DADE0AF0E0402C34E574D77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17A07ED9C63BDA6D3FE468B8 /* Pods-ELMA notification.debug.xcconfig */,
+				44B3DDC4058A64FA79705DD0 /* Pods-ELMA notification.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		92433637219E8BA700EFDA8A /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				92433638219E8BC800EFDA8A /* UsersDefaultsManager.swift */,
+				92A2A23D219EED4F002704DA /* ServiceManager.swift */,
+				92F9345F219F0C2000E3694D /* TODOModel.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -56,6 +84,8 @@
 			children = (
 				B77CF5F0219C8B6C003FB827 /* FMG ELMA notification */,
 				B77CF5EF219C8B6C003FB827 /* Products */,
+				0DADE0AF0E0402C34E574D77 /* Pods */,
+				09D3E74C3AA43CB95DA0DAB0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,9 +121,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B77CF600219C8B6E003FB827 /* Build configuration list for PBXNativeTarget "ELMA notification" */;
 			buildPhases = (
+				C38A7024ACC1EAD4944F2838 /* [CP] Check Pods Manifest.lock */,
 				B77CF5EA219C8B6C003FB827 /* Sources */,
 				B77CF5EB219C8B6C003FB827 /* Frameworks */,
 				B77CF5EC219C8B6C003FB827 /* Resources */,
+				6EBC7F625BA8DEC751B5C7FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,16 +182,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6EBC7F625BA8DEC751B5C7FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ELMA notification/Pods-ELMA notification-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELMA notification/Pods-ELMA notification-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C38A7024ACC1EAD4944F2838 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ELMA notification-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B77CF5EA219C8B6C003FB827 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				92D56DCC219DAE8D007D2E2C /* LoginViewController.swift in Sources */,
+				92F93460219F0C2000E3694D /* TODOModel.swift in Sources */,
 				B7FBDA44219DEB5A007D8861 /* SettingsScreen.swift in Sources */,
 				92433639219E8BC800EFDA8A /* UsersDefaultsManager.swift in Sources */,
 				9243363B219E8F1100EFDA8A /* ListViewController.swift in Sources */,
 				92400BF0219EEA9D00CFED6A /* ListViewCell.swift in Sources */,
+				92A2A23E219EED4F002704DA /* ServiceManager.swift in Sources */,
 				B77CF5F2219C8B6C003FB827 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +385,7 @@
 		};
 		B77CF601219C8B6E003FB827 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17A07ED9C63BDA6D3FE468B8 /* Pods-ELMA notification.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -323,6 +405,7 @@
 		};
 		B77CF602219C8B6E003FB827 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44B3DDC4058A64FA79705DD0 /* Pods-ELMA notification.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

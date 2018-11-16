@@ -11,11 +11,15 @@ import UIKit
 class ListViewController: UIViewController {
 
     @IBOutlet weak var titleLbl: UILabel!
-    
+    var userId = -1
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        ServiceManager.shared.getUserName(userId: userId) { [weak self] (userName) in
+            self?.titleLbl.text = userName
+        }
+        ServiceManager.shared.getTODOListBuyUser(userId: userId, listStatus: 1) { (list) in
+            
+        }
     }
     
     @IBAction func backTo(_ sender: UIButton) {

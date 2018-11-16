@@ -32,4 +32,40 @@ class UsersDefaultsManager: NSObject {
         userDefaults.set(portName, forKey: "portname")
         userDefaults.synchronize()
     }
+    
+    static func getSavedUserName() -> String?{
+        let userDefaults = UserDefaults.standard
+        let userName = userDefaults.object(forKey: "savedusername") as? String
+        return userName
+    }
+    
+    static func saveUserName(userName: String){
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(userName, forKey: "savedusername")
+        userDefaults.synchronize()
+    }
+    
+    static func getSavedUserPass() -> String?{
+        let userDefaults = UserDefaults.standard
+        let userPass = userDefaults.object(forKey: "saveduserpass") as? String
+        return userPass
+    }
+    
+    static func saveUserPass(userPass: String){
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(userPass, forKey: "saveduserpass")
+        userDefaults.synchronize()
+    }
+    
+    static func getNeedSaveUser() -> Bool{
+        let userDefaults = UserDefaults.standard
+        let userPass = userDefaults.bool(forKey: "needsaveuser")
+        return userPass
+    }
+    
+    static func needSaveUser(needSave: Bool){
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(needSave, forKey: "needsaveuser")
+        userDefaults.synchronize()
+    }
 }

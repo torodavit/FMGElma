@@ -36,6 +36,12 @@ class SettingsScreen: UIViewController {
         
         self.cancelbtn.layer.masksToBounds = true
         self.cancelbtn.layer.cornerRadius = 5
+        if let hostName = UsersDefaultsManager.getSavedHost()  {
+            hostTxtField.text = hostName
+        }
+        if let hostPort = UsersDefaultsManager.getSavedPort() {
+            portTxtField.text = hostPort
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {

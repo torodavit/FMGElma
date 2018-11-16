@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var userNameTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
+    @IBOutlet weak var loader: UIActivityIndicatorView!
+    @IBOutlet weak var saveSwitcher: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,12 @@ class LoginViewController: UIViewController {
             passwordTopConstraint.constant = 10
         }
         addObservere()
+        let needSave = UsersDefaultsManager.getNeedSaveUser()
+        saveSwitcher.isOn = needSave
+        if needSave {
+            self.userNameTxtField.text = UsersDefaultsManager.getSavedUserName()
+            self.passwordTxtField.text = UsersDefaultsManager.getSavedUserPass()
+        }
     }
     private func addObservere(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -80,9 +88,34 @@ class LoginViewController: UIViewController {
     private func loginUser(){
         if userNameTxtField.text != "" && passwordTxtField.text != "" {
             //Login Users
-            let listScreen = self.storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
-            self.navigationController?.pushViewController(listScreen, animated: true)
-            closeKeyboard()
+            self.loader.startAnimating()
+            self.closeKeyboard()
+            self.view.isUserInteractionEnabled = false
+            ServiceManager.shared.loginUser(userName: userNameTxtField.text!, password: passwordTxtField.text!) { [weak self] (success,UserId) in
+                self?.view.isUserInteractionEnabled = true
+                self?.loader.stopAnimating()
+                if success {
+                    UsersDefaultsManager.saveUserName(userName: (self?.userNameTxtField.text)!)
+                    UsersDefaultsManager.saveUserPass(userPass: (self?.passwordTxtField.text)!)
+                    UsersDefaultsManager.needSaveUser(needSave: (self?.saveSwitcher.isOn)!)
+                    let listScreen = self?.storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
+                    listScreen.userId = UserId
+                    self?.navigationController?.pushViewController(listScreen, animated: true)
+                    self?.closeKeyboard()
+                } else {
+                    switch UserId {
+                    case -1:
+                        self?.showAlerts(title: "შეცდომა", message: "ვერ მოიძებნა მომხმარებელი \((self?.userNameTxtField.text!)!)")
+                        break
+                    case -2:
+                        self?.showAlerts(title: "შეცდომა", message: "გთოხოვთ დააკომფიგურიროთ სერვისი Setting გვერდიდან")
+                        break
+                    default:
+                        print("Not heppend")
+                    }
+                }
+            }
+
         } else {
                 //Error Fill fields
             userNameStroke.layer.borderColor = UIColor.red.cgColor
