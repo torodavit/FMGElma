@@ -14,6 +14,8 @@ class ListViewController: UIViewController {
     @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
+    var refreshControl = UIRefreshControl()
+
     var list = Array<TODOModel>()
     var userId = -1
     
@@ -31,6 +33,19 @@ class ListViewController: UIViewController {
             self?.loader.stopAnimating()
             self?.tableView.reloadData()
             self?.view.isUserInteractionEnabled = true
+        }
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc func refresh() {
+        // Code to refresh table view
+        ServiceManager.shared.getTODOListBuyUser(userId: userId, listStatus: 1) { [weak self] (list) in
+            self?.list = list
+            self?.tableView.reloadData()
+            self?.refreshControl.endRefreshing()
+
         }
     }
     
