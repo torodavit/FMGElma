@@ -82,6 +82,7 @@ class LoginViewController: UIViewController {
             //Login Users
             let listScreen = self.storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
             self.navigationController?.pushViewController(listScreen, animated: true)
+            closeKeyboard()
         } else {
                 //Error Fill fields
             userNameStroke.layer.borderColor = UIColor.red.cgColor
