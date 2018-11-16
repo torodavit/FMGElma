@@ -31,6 +31,9 @@ class LoginViewController: UIViewController {
             loginBtnTopConstraint.constant = 15
             passwordTopConstraint.constant = 10
         }
+        addObservere()
+    }
+    private func addObservere(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     // MARK: Notification
@@ -77,6 +80,8 @@ class LoginViewController: UIViewController {
     private func loginUser(){
         if userNameTxtField.text != "" && passwordTxtField.text != "" {
             //Login Users
+            let listScreen = self.storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
+            self.navigationController?.pushViewController(listScreen, animated: true)
         } else {
                 //Error Fill fields
             userNameStroke.layer.borderColor = UIColor.red.cgColor
@@ -91,7 +96,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func showSettingsView(_ sender: UIButton) {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         let settings = self.storyboard?.instantiateViewController(withIdentifier: "SettingsScreen") as! SettingsScreen
+        settings.delegateSettings = self
         settings.view.backgroundColor = UIColor.clear
         settings.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         self.present(settings, animated: false, completion: nil)
@@ -118,5 +125,11 @@ extension LoginViewController: UITextFieldDelegate {
         userNameTxtField.textColor = UIColor.black
         passwordTxtField.textColor = UIColor.black
         return true
+    }
+}
+
+extension LoginViewController: SettingsScreenDelegate {
+    func dismisSettingsScreen() {
+        self.addObservere()
     }
 }

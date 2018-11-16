@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92433639219E8BC800EFDA8A /* UsersDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92433638219E8BC800EFDA8A /* UsersDefaultsManager.swift */; };
+		9243363B219E8F1100EFDA8A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9243363A219E8F1100EFDA8A /* ListViewController.swift */; };
 		92D56DCC219DAE8D007D2E2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D56DCB219DAE8D007D2E2C /* LoginViewController.swift */; };
 		B77CF5F2219C8B6C003FB827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CF5F1219C8B6C003FB827 /* AppDelegate.swift */; };
 		B77CF5F7219C8B6C003FB827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77CF5F5219C8B6C003FB827 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92433638219E8BC800EFDA8A /* UsersDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDefaultsManager.swift; sourceTree = "<group>"; };
+		9243363A219E8F1100EFDA8A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		92D56DCB219DAE8D007D2E2C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B77CF5EE219C8B6C003FB827 /* ELMA notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELMA notification.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77CF5F1219C8B6C003FB827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92433637219E8BA700EFDA8A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				92433638219E8BC800EFDA8A /* UsersDefaultsManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		B77CF5E5219C8B6C003FB827 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +68,15 @@
 		B77CF5F0219C8B6C003FB827 /* FMG ELMA notification */ = {
 			isa = PBXGroup;
 			children = (
+				92433637219E8BA700EFDA8A /* Core */,
 				B77CF5F1219C8B6C003FB827 /* AppDelegate.swift */,
+				92D56DCB219DAE8D007D2E2C /* LoginViewController.swift */,
+				B7FBDA43219DEB5A007D8861 /* SettingsScreen.swift */,
+				9243363A219E8F1100EFDA8A /* ListViewController.swift */,
 				B77CF5F5219C8B6C003FB827 /* Main.storyboard */,
 				B77CF5F8219C8B6E003FB827 /* Assets.xcassets */,
 				B77CF5FA219C8B6E003FB827 /* LaunchScreen.storyboard */,
 				B77CF5FD219C8B6E003FB827 /* Info.plist */,
-				92D56DCB219DAE8D007D2E2C /* LoginViewController.swift */,
-				B7FBDA43219DEB5A007D8861 /* SettingsScreen.swift */,
 			);
 			path = "FMG ELMA notification";
 			sourceTree = "<group>";
@@ -140,6 +154,8 @@
 			files = (
 				92D56DCC219DAE8D007D2E2C /* LoginViewController.swift in Sources */,
 				B7FBDA44219DEB5A007D8861 /* SettingsScreen.swift in Sources */,
+				92433639219E8BC800EFDA8A /* UsersDefaultsManager.swift in Sources */,
+				9243363B219E8F1100EFDA8A /* ListViewController.swift in Sources */,
 				B77CF5F2219C8B6C003FB827 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
