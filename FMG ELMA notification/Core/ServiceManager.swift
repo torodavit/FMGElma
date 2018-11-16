@@ -20,7 +20,6 @@ class ServiceManager: NSObject {
                 if let result = response.result.value as? Int {
                     DispatchQueue.main.async {
                         //Result is user id if -1 not exist user
-                        print(result)
                         if result == -1 {
                             completion(false,result)
                         } else {
@@ -65,14 +64,18 @@ class ServiceManager: NSObject {
             if let result = response.result.value as? [Dictionary<String,Any>] {
                 DispatchQueue.main.async {
                     if result.count > 0 {
-//                        completion(result.first!["FullName"] as! String)
                         var list = Array<TODOModel>()
                         for obj in result {
                             let toDomodel = TODOModel()
-                            toDomodel.message = obj["message"] as? String
+                            toDomodel.message = obj["Message"] as? String
                             toDomodel.IdMessagesForAndorid = obj["IdMessagesForAndorid"] as? Int
-                            toDomodel.DataEnd = obj["DataEnd"] as! String
-                            toDomodel.DataStart = obj["DataStart"] as! String
+                            toDomodel.DataEnd = obj["DataEnd"] as? String
+                            toDomodel.DataStart = obj["DataStart"] as? String
+                            toDomodel.IdUser = obj["IdUser"] as? Int
+                            toDomodel.Seen = obj["Seen"] as? Int
+                            toDomodel.Msglink = obj["Msglink"] as? String
+                            toDomodel.SeenDate = obj["SeenDate"] as? String
+                            list.append(toDomodel)
                         }
                         completion(list)
                     } else {
@@ -82,6 +85,23 @@ class ServiceManager: NSObject {
             } else {
                 DispatchQueue.main.async {
                     completion([])
+                }
+            }
+        }
+    }
+    
+    func seenToDo(with toDoId: Int, completion: @escaping (String) -> ()) {
+        //http://178.134.55.18:8520/api/MessageSeen?IdMessagesForAndorid=10
+        let hostName = UsersDefaultsManager.getSavedHost()
+        let portnName = UsersDefaultsManager.getSavedPort()
+        Alamofire.request("http://\(hostName!):\(portnName!)/api/MessageSeen?IdMessagesForAndorid=\(toDoId)").responseJSON { (response) in
+            if let result = response.result.value as? String {
+                DispatchQueue.main.async {
+                    completion(result)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completion("")
                 }
             }
         }

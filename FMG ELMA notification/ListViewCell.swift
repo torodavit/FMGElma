@@ -9,7 +9,10 @@
 import UIKit
 
 class ListViewCell: UITableViewCell {
-
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var todoRange: UILabel!
+    @IBOutlet weak var seenDate: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
