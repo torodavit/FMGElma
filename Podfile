@@ -7,4 +7,5 @@ target 'ELMA notification' do
 
   # Pods for ELMA notification
 pod 'Alamofire'
+pod 'OneSignal'
 end
