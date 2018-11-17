@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OneSignal
 
 class LoginViewController: UIViewController {
 
@@ -100,6 +101,7 @@ class LoginViewController: UIViewController {
                     UsersDefaultsManager.needSaveUser(needSave: (self?.saveSwitcher.isOn)!)
                     let listScreen = self?.storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
                     listScreen.userId = UserId
+                    OneSignal.sendTag("tag", value: "\(UserId)")
                     self?.navigationController?.pushViewController(listScreen, animated: true)
                     self?.closeKeyboard()
                 } else {

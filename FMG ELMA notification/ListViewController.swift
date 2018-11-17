@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OneSignal
 
 class ListViewController: UIViewController {
 
@@ -18,6 +19,11 @@ class ListViewController: UIViewController {
 
     var list = Array<TODOModel>()
     var userId = -1
+    var seenColor = UIColor.gray
+    var unSeenColor = UIColor.black
+    
+    var seenFont = UIFont(name: "HelveticaNeue-Light", size: 14)
+    var unSeenFont = UIFont(name: "HelveticaNeue-Bold", size: 14)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +32,7 @@ class ListViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension;
         self.tableView.estimatedRowHeight = 110.0;
         ServiceManager.shared.getUserName(userId: userId) { [weak self] (userName) in
+            OneSignal.sendTag("UserFullName", value: userName)
             self?.titleLbl.text = userName
         }
         ServiceManager.shared.getTODOListBuyUser(userId: userId, listStatus: 1) { [weak self] (list) in
@@ -111,9 +118,25 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         if obj.Seen == 1 {
+            cell.titleLbl.textColor = seenColor
+            cell.rangeLbl.textColor = seenColor
+            cell.todoRange.textColor = seenColor
+            cell.seenDate.textColor = seenColor
             
+            cell.titleLbl.font = seenFont
+            cell.rangeLbl.font = seenFont
+            cell.todoRange.font = seenFont
+            cell.seenDate.font = seenFont
         } else {
+            cell.titleLbl.textColor = unSeenColor
+            cell.rangeLbl.textColor = unSeenColor
+            cell.todoRange.textColor = unSeenColor
+            cell.seenDate.textColor = unSeenColor
             
+            cell.titleLbl.font = unSeenFont
+            cell.rangeLbl.font = unSeenFont
+            cell.todoRange.font = unSeenFont
+            cell.seenDate.font = unSeenFont
         }
         return cell
     }

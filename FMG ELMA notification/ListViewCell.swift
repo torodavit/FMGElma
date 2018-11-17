@@ -12,6 +12,7 @@ class ListViewCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var todoRange: UILabel!
     @IBOutlet weak var seenDate: UILabel!
+    @IBOutlet weak var rangeLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
