@@ -148,11 +148,18 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             self?.view.isUserInteractionEnabled = true
             self?.loader.stopAnimating()
             if message == "Ok" {
+                obj.Seen = 1
+                self?.tableView.reloadData()
                 self?.showAlerts(title: "წარმატება", message: "წარმატებით შეასრულეთ დავალება")
             } else {
                 self?.showAlerts(title: "შეცდომა", message: "დაფიქსირდა შეცდომა გთხოვთ ცადოთ თავიდან")
             }
         }
+        guard let url = URL(string: obj.Msglink!) else {
+            return //be safe
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
