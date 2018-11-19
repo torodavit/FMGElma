@@ -33,12 +33,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         OneSignal.promptForPushNotifications(userResponse: { accepted in
             print("User accepted notifications: \(accepted)")
         })
-        if launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil {
+        if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [String: Any]  {
             
-            
-            // Do what you want to happen when a remote notification is tapped.
-            print(launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification])
-            
+            if let customUserInfo =  userInfo["custom"] as? [String: Any] {
+                if let id = customUserInfo["a"]! as? [String: Any]{
+                    if let idString = id["id"] as? String {
+                        print(idString)
+                        ServiceManager.shared.seenToDo(with: Int(idString)!) { (success) in
+                            print(success)
+                        }
+                    }
+                }
+            }
+            // Do what you want to happen when a remote notification is tapped.            
         }
         return true
     }
@@ -51,7 +58,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print(userInfo)
+        
+        if let customUserInfo =  userInfo["custom"] as? [String: Any] {
+            if let id = customUserInfo["a"]! as? [String: Any]{
+                if let idString = id["id"] as? String {
+                    print(idString)
+                    ServiceManager.shared.seenToDo(with: Int(idString)!) { (success) in
+                        print(success)
+                    }
+                }
+            }
+        }
     }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
