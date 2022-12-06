@@ -1,21 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "8244AF4C-365F-452B-BA01-75EC62FC69D4"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "C759986A-1D39-4E5B-8334-156359D5F485"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMG ELMA notification/Core/ServiceManager.swift"
-            timestampString = "564071494.336869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "loginUser(userName:password:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C759986A-1D39-4E5B-8334-156359D5F485 - fc080d392583aef0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in ELMA_notification.ServiceManager.loginUser(userName: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.Int) -&gt; ()) -&gt; ()"
+                  moduleName = "ELMA notification"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornikedavitashvili/Documents/GitHub/FMGElma/FMG%20ELMA%20notification/Core/ServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "2024">
+               </Location>
+               <Location
+                  uuid = "C759986A-1D39-4E5B-8334-156359D5F485 - 3f8f0779d80a67ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 @Swift.MainActor () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in ELMA_notification.ServiceManager.loginUser(userName: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.Int) -&gt; ()) -&gt; ()"
+                  moduleName = "ELMA notification"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornikedavitashvili/Documents/GitHub/FMGElma/FMG%20ELMA%20notification/Core/ServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB0CCE89-C04E-4C8E-8744-E236FABDAC21"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FMG ELMA notification/Core/ServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "getTODOListBuyUser(userId:listStatus:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A13EB36E-398A-43CD-A177-1DDBA15B4907"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FMG ELMA notification/Core/ServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "getUserName(userId:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29BAF603-4EC6-467C-BEB2-96D93065A469"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FMG ELMA notification/Core/ServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "getTODOListBuyUser(userId:listStatus:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0DAD171-9651-426D-BD16-3D1843CFA8FA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FMG ELMA notification/Core/ServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "seenToDo(with:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

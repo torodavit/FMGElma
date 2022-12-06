@@ -12,7 +12,7 @@ class UsersDefaultsManager: NSObject {
     static func getSavedHost() -> String?{
         let userDefaults = UserDefaults.standard
         let host = userDefaults.object(forKey: "urlhost") as? String
-        return host
+        return host ?? "217.147.235.106"
     }
     
     static func saveHost(hostName: String){
@@ -24,7 +24,7 @@ class UsersDefaultsManager: NSObject {
     static func getSavedPort() -> String?{
         let userDefaults = UserDefaults.standard
         let port = userDefaults.object(forKey: "portname") as? String
-        return port
+        return port ?? "8001"
     }
     
     static func savePort(portName: String){

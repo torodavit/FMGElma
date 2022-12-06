@@ -18,21 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //653f176c-ad19-4227-b15f-4a7b095ef78a
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
         
-        // Replace 'YOUR_APP_ID' with your OneSignal App ID.
-        OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: "653f176c-ad19-4227-b15f-4a7b095ef78a",
-                                        handleNotificationAction: nil,
-                                        settings: onesignalInitSettings)
+        OneSignal.setLogLevel(.LL_VERBOSE, visualLevel: .LL_NONE)
         
-        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        // OneSignal initialization
+        OneSignal.initWithLaunchOptions(launchOptions)
+        OneSignal.setAppId("653f176c-ad19-4227-b15f-4a7b095ef78a")
         
-        // Recommend moving the below line to prompt for push after informing the user about
-        //   how your app will use them.
+        // promptForPushNotifications will show the native iOS notification permission prompt.
+        // We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 8)
         OneSignal.promptForPushNotifications(userResponse: { accepted in
-            print("User accepted notifications: \(accepted)")
+          print("User accepted notifications: \(accepted)")
         })
+        
         if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [String: Any]  {
             
             if let customUserInfo =  userInfo["custom"] as? [String: Any] {
